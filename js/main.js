@@ -4,6 +4,9 @@ const textarea = document.querySelector("#feed-textarea > ul");
 const date = new Date();
 document.querySelector("#date").innerHTML = date.toDateString();
 
+const author = document.querySelector(".author");
+author.innerText = "Made by MinhPro";
+
 fetch(RSS_URL)
   .then((response) => response.text())
   .then((str) => new window.DOMParser().parseFromString(str, "text/xml"))
